@@ -10,7 +10,11 @@ const saveNote = () => {
         }
     })
     console.log(data);
-    localStorage.setItem("note",JSON.stringify(data));
+     if(data.length == ""){
+        localStorage.removeItem("note");
+    }else{
+        localStorage.setItem("note",JSON.stringify(data));
+    }
 }
 
 const addNote = (note = "") => {
